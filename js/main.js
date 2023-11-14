@@ -213,11 +213,11 @@ $(function() {
 	function getWeather() {
 		let coords = latlng[mapData.region];
 		$.ajax({
-			url: 'https://'+'api.darksky.net/forecast/a61f2561aba84c5cf1a729f103b82f1a/'+coords+','+mapData.day+'?exclude=currently,minutely,hourly,alerts,flags',
-			//url: adminPrefix+'js/weatherSample.json',
+			//url: 'https://'+'api.darksky.net/forecast/a61f2561aba84c5cf1a729f103b82f1a/'+coords+','+mapData.day+'?exclude=currently,minutely,hourly,alerts,flags',
+			url: adminPrefix+'js/weatherSample.json',
 			type: "GET",
 			crossDomain: true,
-			dataType: "jsonp", //jsonp for darksky, json for local test
+			dataType: "json", //jsonp for darksky, json for local test
 			success: function(response) {
 				console.log(response);
 				let tempHi = Math.round(response.daily.data[0].apparentTemperatureMax),
